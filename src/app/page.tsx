@@ -1,7 +1,8 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSession } from 'next-auth/react'
+import { URLParamsHandler } from '@/components/URLParamsHandler'
 import { 
   Search, 
   Filter, 
@@ -92,7 +93,13 @@ export default function HomePage() {
   const [showLoginModal, setShowLoginModal] = useState(false)
   const [selectedCalculator, setSelectedCalculator] = useState<Calculator | null>(null)
   const [showWelcomeToast, setShowWelcomeToast] = useState(false)
+  const [showLogoutToast, setShowLogoutToast] = useState(false)
   const [hasShownToast, setHasShownToast] = useState(false)
+
+  // Handle logout success from URL params
+  const handleLogoutSuccess = () => {
+    setShowLogoutToast(true)
+  }
 
   // Show welcome toast when user logs in
   useEffect(() => {
@@ -180,6 +187,11 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50/20">
+      {/* URL Parameters Handler */}
+      <Suspense fallback={null}>
+        <URLParamsHandler onLogoutSuccess={handleLogoutSuccess} />
+      </Suspense>
+      
       {/* Simple but Beautiful Header */}
       <div className="relative bg-gradient-to-r from-white via-blue-50/30 to-white border-b border-blue-100/50">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -445,6 +457,15 @@ export default function HomePage() {
           message={`Welcome back, ${session?.user?.name?.split(' ')[0] || 'User'}! You're now logged in.`}
           type="success"
           onClose={() => setShowWelcomeToast(false)}
+        />
+      )}
+
+      {/* Logout Success Toast */}
+      {showLogoutToast && (
+        <Toast
+          message="You've been successfully logged out. Thanks for using Calculator Startsim.ai!"
+          type="success"
+          onClose={() => setShowLogoutToast(false)}
         />
       )}
     </div>

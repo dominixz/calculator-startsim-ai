@@ -3,12 +3,14 @@
 import Link from 'next/link'
 import { Calculator, Menu, Github, LogOut } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { LogoutModal } from '@/components/ui/LogoutModal'
 import { useState } from 'react'
-import { useSession, signIn, signOut } from 'next-auth/react'
+import { useSession, signIn } from 'next-auth/react'
 import Image from 'next/image'
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const [showLogoutModal, setShowLogoutModal] = useState(false)
   const { data: session, status } = useSession()
 
   const handleGitHubLogin = () => {
@@ -16,7 +18,7 @@ export function Header() {
   }
 
   const handleSignOut = () => {
-    signOut()
+    setShowLogoutModal(true)
   }
 
   return (
@@ -181,6 +183,12 @@ export function Header() {
           </div>
         )}
       </div>
+
+      {/* Logout Modal */}
+      <LogoutModal 
+        isOpen={showLogoutModal}
+        onClose={() => setShowLogoutModal(false)}
+      />
     </header>
   )
 }
