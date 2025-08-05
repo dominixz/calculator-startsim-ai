@@ -1,41 +1,96 @@
-# Calculator Startsim.ai - Business Calculator Hub
+# Calculator Startsim.AI - Business Calculator Hub
 
-A comprehensive business calculator portal built with Next.js, TypeScript, and Tailwind CSS. Similar to calculator.net but focused on business and financial calculations.
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/dominixz/calculator-startsim-ai)
+[![Next.js](https://img.shields.io/badge/Next.js-15.4.5-black)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
+[![License](https://img.shields.io/badge/license-Private-red.svg)](https://github.com/dominixz/calculator-startsim-ai)
 
-## 🚀 Features
+A comprehensive business calculator portal with premium features, GitHub authentication, and modern user experience. Built with Next.js, TypeScript, and Tailwind CSS.
 
-- **Comprehensive Calculators**: Loan, mortgage, investment, tax, and business calculators
-- **Responsive Design**: Works perfectly on desktop and mobile devices
-- **User Authentication**: Save and track your calculations (coming soon)
-- **Database Integration**: Turso (SQLite) for user data and calculation history
-- **Modern UI**: Clean and intuitive interface with Tailwind CSS
-- **SEO Optimized**: Built with Next.js App Router for better performance
+## 🎉 Version 1.0.0 Released!
 
-## 📊 Available Calculators
+**Calculator Startsim.AI** is now live with 11 professional calculators, premium access control, and a beautiful modern interface.
 
-- **Loan Calculator**: Monthly payments, amortization schedules, total interest
-- **Mortgage Calculator**: Home loan calculations with different terms
-- **Investment Calculator**: Compound interest and growth projections
-- **Tax Calculator**: Federal and state tax estimates
-- **Credit Card Calculator**: Payoff time and interest calculations
-- **Business Calculator**: ROI, break-even analysis, and more
+## ✨ Key Features
+
+### 🏆 **Premium Calculator Hub**
+- **11 Professional Calculators** across multiple categories
+- **7 Premium Calculators** with GitHub authentication
+- **4 Public Calculators** accessible to everyone
+- **Smart Search & Filtering** with real-time results
+
+### 🔐 **Advanced Authentication**
+- **GitHub OAuth Integration** for secure access
+- **Premium Access Control** for exclusive calculators
+- **Enhanced Logout System** with confirmation modals
+- **Visual Login Indicators** and welcome messages
+
+### 🎨 **Modern User Experience**
+- **Beautiful Gradient Design** with smooth animations
+- **Responsive Layout** optimized for all devices
+- **Loading States** and progress indicators
+- **Toast Notifications** for user feedback
+- **Social Media Sharing** integration
+
+### 🚀 **SEO & Performance**
+- **Open Graph Tags** for rich social media previews
+- **Structured Data** with Schema.org markup
+- **Dynamic Metadata** for each calculator
+- **PWA Support** with offline capabilities
+- **Optimized Performance** with Next.js 15
+
+## 📊 Calculator Portfolio
+
+### 🌐 **Public Calculators** (No Login Required)
+- **Selling Price Calculator** - Optimize your pricing strategies
+- **Free Conversion & Pricing Calculator** - Unit conversion and pricing tools
+- **$1 Simulation Game** - Interactive financial simulation
+- **Simple Text to Image Generator** - Basic image generation tool
+
+### 🔒 **Premium Calculators** (GitHub Login Required)
+- **Life Calculator** - Life expectancy and planning tools
+- **Unit Value Comparison Tool** - Advanced comparison analytics
+- **Churn Rate Threshold Calculator** - Business retention metrics
+- **Peace of Mind & Emergency Fund Calculator** - Financial security planning
+- **Budget Calculator** - Advanced budgeting with scenarios
+- **YouTube AI Summarizer** - AI-powered video content analysis
+- **เครื่องคำนวณเงินออมเกษียณ** - Thai retirement savings calculator
 
 ## 🛠️ Technology Stack
 
-- **Framework**: Next.js 15 with App Router
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Database**: Turso (SQLite) with Drizzle ORM
-- **Authentication**: NextAuth.js (planned)
-- **Deployment**: Vercel-ready
-- **Icons**: Lucide React
+### **Frontend**
+- **Next.js 15.4.5** with App Router and Turbopack
+- **TypeScript** for full type safety
+- **Tailwind CSS** with custom design system
+- **Lucide React** for consistent iconography
+- **React Hooks** for modern state management
 
-## 🏃‍♂️ Getting Started
+### **Backend & Database**
+- **Turso SQLite** cloud-native database
+- **Drizzle ORM** with type-safe operations
+- **NextAuth.js 4.24.11** for GitHub authentication
+- **API Routes** for RESTful endpoints
+
+### **Deployment & DevOps**
+- **Vercel** for serverless deployment
+- **GitHub** for version control and CI/CD
+- **Environment Variables** for secure configuration
+- **ESLint** for code quality
+
+## 🏃‍♂️ Quick Start
+
+### **Prerequisites**
+- Node.js 18+ 
+- npm or yarn
+- GitHub account (for authentication)
+- Turso account (for database)
+
+### **Installation**
 
 1. **Clone the repository**
 ```bash
-git clone <repository-url>
-cd calculator_startsim_ai
+git clone https://github.com/dominixz/calculator-startsim-ai.git
+cd calculator-startsim-ai
 ```
 
 2. **Install dependencies**
@@ -47,6 +102,33 @@ npm install
 ```bash
 cp .env.local.example .env.local
 ```
+
+Edit `.env.local` with your configurations:
+```env
+# Database
+TURSO_DATABASE_URL=your_turso_database_url
+TURSO_AUTH_TOKEN=your_turso_auth_token
+
+# NextAuth.js
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your_nextauth_secret
+
+# GitHub OAuth
+GITHUB_CLIENT_ID=your_github_client_id
+GITHUB_CLIENT_SECRET=your_github_client_secret
+```
+
+4. **Set up database**
+```bash
+npm run db:push
+```
+
+5. **Run development server**
+```bash
+npm run dev
+```
+
+Visit [http://localhost:3000](http://localhost:3000) to see your application.
 
 Edit `.env.local` and add your Turso database credentials:
 - `TURSO_DATABASE_URL`: Your Turso database URL
