@@ -134,8 +134,8 @@ const calculatorsList = [
   },
   {
     id: 'retirement-savings-' + (Date.now() + 10),
-    name: 'เครื่องคำนวณเงินออมเกษียณ',
-    description: 'เครื่องมือคำนวณเงินออมเกษียณแบบครองุิต่อให้เหมาะสมกับไฟไลอร์สไตล์',
+    name: 'Retirement Savings Calculator',
+    description: 'Plan your retirement with comprehensive savings calculations. Determine how much you need to save monthly to achieve your retirement goals.',
     category: 'financial',
     slug: 'retirement-savings',
     icon: '🏦',
