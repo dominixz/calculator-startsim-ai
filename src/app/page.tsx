@@ -30,6 +30,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button'
 import { LoginModal } from '@/components/ui/LoginModal'
 import { Toast } from '@/components/ui/Toast'
+import { SocialShare } from '@/components/SocialShare'
 
 interface Calculator {
   id: string
@@ -235,6 +236,13 @@ export default function HomePage() {
                     <Filter className="h-5 w-5" />
                   </button>
                 </div>
+              </div>
+            </div>
+
+            {/* Social Share */}
+            <div className="mt-8 flex justify-center">
+              <div className="bg-white/50 backdrop-blur-sm rounded-2xl px-6 py-3 border border-white/20">
+                <SocialShare />
               </div>
             </div>
           </div>
