@@ -155,6 +155,20 @@ const calculatorsList = [
     metadata: JSON.stringify({
       keywords: ['date', 'analyzer', 'explorer', 'temporal', 'calendar', 'time', 'comparison', 'calculator']
     })
+  },
+  {
+    id: 'bmi-calculator-' + (Date.now() + 12),
+    name: 'Health Calculator - BMI & TDEE',
+    description: 'Calculate your BMI (Body Mass Index) and TDEE (Total Daily Energy Expenditure). Get personalized health insights and daily calorie needs for optimal wellness.',
+    category: 'health',
+    slug: 'bmi-calculator',
+    icon: '💪',
+    featured: true,
+    externalUrl: 'https://bmi-calculator--dominixz.github.app/',
+    requiresAuth: true,
+    metadata: JSON.stringify({
+      keywords: ['bmi', 'health', 'calculator', 'tdee', 'calorie', 'fitness', 'body mass index', 'wellness', 'nutrition']
+    })
   }
 ]
 
@@ -184,6 +198,7 @@ async function addCalculators() {
     
     console.log('\n🎉 All calculators successfully added to local database!')
     console.log('📅 Date Explorer & Analyzer is now available as a premium calculator!')
+    console.log('💪 Health Calculator - BMI & TDEE is now available as a premium calculator!')
 
   } catch (error) {
     console.error('❌ Error:', error)
