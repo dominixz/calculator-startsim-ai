@@ -169,6 +169,20 @@ const calculatorsList = [
     metadata: JSON.stringify({
       keywords: ['bmi', 'health', 'calculator', 'tdee', 'calorie', 'fitness', 'body mass index', 'wellness', 'nutrition']
     })
+  },
+  {
+    id: 'inflation-calculator-' + (Date.now() + 13),
+    name: 'Inflation Impact Calculator',
+    description: 'See how inflation affects your everyday spending over time. Add your expenses and discover their future cost. Understand the real impact of inflation on your budget with interactive calculations.',
+    category: 'financial',
+    slug: 'inflation-calculator',
+    icon: '📈',
+    featured: true,
+    externalUrl: 'https://inflation-impact-cal--dominixz.github.app/',
+    requiresAuth: true,
+    metadata: JSON.stringify({
+      keywords: ['inflation', 'calculator', 'expenses', 'cost', 'budget', 'financial planning', 'purchasing power', 'economic impact']
+    })
   }
 ]
 
@@ -199,6 +213,7 @@ async function addCalculators() {
     console.log('\n🎉 All calculators successfully added to local database!')
     console.log('📅 Date Explorer & Analyzer is now available as a premium calculator!')
     console.log('💪 Health Calculator - BMI & TDEE is now available as a premium calculator!')
+    console.log('📈 Inflation Impact Calculator is now available as a premium calculator!')
 
   } catch (error) {
     console.error('❌ Error:', error)
